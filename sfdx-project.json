@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://canvasser-7217--503admin.lightning.force.com",
+  "sourceApiVersion": "45.0"
+}
