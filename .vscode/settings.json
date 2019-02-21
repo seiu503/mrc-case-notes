@@ -10,5 +10,6 @@
     },
     "eslint.nodePath": "/Users/sarahschneider/.vscode/extensions/salesforce.salesforcedx-vscode-lwc-45.2.0/node_modules",
     "html.suggest.angular1": false,
-    "html.suggest.ionic": false
+    "html.suggest.ionic": false,
+    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home"
 }
