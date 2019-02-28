@@ -1,0 +1,45 @@
+@isTest
+private class MrcCaseListControllerTests {
+
+    static testMethod void testMethod1(){
+            //Insert Grievance Record 
+            Grievance__c g = new Grievance__c(Grievance_Status__c = 'Open');
+            list<Grievance__c> gList = new list<Grievance__c>();
+            gList.add(g);
+            insert gList;
+
+            Id grievanceId = gList[0].Id;
+
+            //Insert Grievance Notes
+            Grievance_Note__c n1 = new Grievance_Note__c(Note__c = 'n1', Grievance__c = grievanceId);
+            Grievance_Note__c n2 = new Grievance_Note__c(Note__c = 'n2', Grievance__c = grievanceId);
+            list<Grievance_Note__c> nList = new list<Grievance_Note__c>();
+            nList.add(n1);
+            nList.add(n2);
+            insert nList;
+
+            Test.StartTest(); 
+
+            PageReference pageRef = Page.MrcCaseList; 
+            pageRef.getParameters().put('id', String.valueOf(grievanceId));
+            Test.setCurrentPage(pageRef);
+
+            ApexPages.StandardController sc = new ApexPages.StandardController(g);
+            MrcCaseListController ext = new MrcCaseListController(sc);
+
+            //Test that Notes are Inserted
+            list<Grievance_Note__c> obj1 = ext.getNotes();
+            system.assertequals(obj1.size(),2);
+            
+            //Delete Records
+            delete nList;
+            delete gList;
+            
+            //Test that Notes are Deleted
+            list<Grievance_Note__c> obj2 = ext.getNotes();
+            system.assertEquals(obj2.size(),0); 
+
+            Test.StopTest();
+        }     
+
+}

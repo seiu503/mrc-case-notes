@@ -6,6 +6,6 @@
     }
   ],
   "namespace": "",
-  "sfdcLoginUrl": "https://canvasser-7217--503admin.lightning.force.com",
+  "sfdcLoginUrl": "https://test.salesforce.com",
   "sourceApiVersion": "45.0"
 }
