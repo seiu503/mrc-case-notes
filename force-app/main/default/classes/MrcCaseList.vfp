@@ -9,9 +9,7 @@
                 <apex:outputText value="{!n.CreatedBy.Name}" style="font-weight: bold; padding-right: 20px;" />
                 <apex:outputText style="">
                     <apex:outputLink value="/{!n.id}" target="_blank">
-                        <apex:outputText value="{0,date,MM/dd/yyyy h:mm a}">
-                            <apex:param value="{!n.Note_Created_Date_Time__c}" />
-                        </apex:outputText>
+                        <apex:outputField value="{!n.Note_Created_Date_Time__c}" />
                     </apex:outputLink>
                 </apex:outputText>
             </div>
